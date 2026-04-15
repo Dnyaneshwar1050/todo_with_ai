@@ -29,7 +29,7 @@ export async function deleteTodo(id) {
 } 
 
 export async function searchTodos(search) {
-  return await db.select().from(todosTable).where(ilike(todosTable.todo, search));
+  return await db.select().from(todosTable).where(ilike(todosTable.todo, `%${search}%`));
 }
 
 
