@@ -1,10 +1,8 @@
-import { timestamp } from "drizzle-orm/gel-core";
-import { integer, pgTable, text } from "drizzle-orm/pg-core";
-import { time } from "node:console";
+import { integer, pgTable, text, timestamp } from "drizzle-orm/pg-core";
 
-export const todos = pgTable("todos", {
+export const todosTable = pgTable("todos", {
   id: integer().primaryKey().generatedAlwaysAsIdentity(),
   todo: text().notNull(),
-  relatedAt: timestamp('created_at').defaultNow(),
+  createdAt: timestamp("created_at").defaultNow(),
   updatedAt: timestamp("updated_at").$onUpdate(() => new Date()),
 });

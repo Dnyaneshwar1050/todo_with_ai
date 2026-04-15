@@ -19,6 +19,8 @@
   "dependencies": {
     "dotenv": "^17.4.2",
     "drizzle-orm": "^0.45.2",
-    "pg": "^8.20.0"
+    "openai": "^6.34.0",
+    "pg": "^8.20.0",
+    "readline-sync": "^1.4.10"
   }
 }
